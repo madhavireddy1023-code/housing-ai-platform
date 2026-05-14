@@ -1,0 +1,16 @@
+services:
+
+  ml-api:
+    build: ./apps/ml-api
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: ./apps/frontend-portal
+    ports:
+      - "3000:3000"
+
+  spring-api:
+    build: ./apps/market-analysis-api
+    ports:
+      - "8080:8080"
