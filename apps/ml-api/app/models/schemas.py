@@ -3,11 +3,13 @@ from typing import List
 
 
 class HousingFeatures(BaseModel):
-    area: float
+    square_footage: float
     bedrooms: int
-    bathrooms: int
-    stories: int
-    parking: int
+    bathrooms: float
+    year_built: int
+    lot_size: float
+    distance_to_city_center: float
+    school_rating: float
 
 
 class BatchPredictionRequest(BaseModel):

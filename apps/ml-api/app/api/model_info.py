@@ -8,7 +8,7 @@ def get_model_info():
     return {
         'model_type': "Linear Regression",
         'model_description': "A simple linear regression model for predicting housing prices",
-        'cofficients': model.coef_.tolist(),
+        'coefficients': model.coef_.tolist(),
         'intercept': model.intercept_,
         "metrics": metrics,
         "features": features

@@ -1,6 +1,5 @@
 from pathlib import Path
 import pandas as pd
-import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import (mean_squared_error, r2_score, mean_absolute_error)
@@ -13,12 +12,11 @@ MODEL_PATH = BASE_DIR / "saved_models" / "house_price_model.pkl"
 
 def train_model():
     # Load data from csv
-    df = pd.read_csv(DATA_PATH, sep=None, engine='python')
-    print(df.head())
+    df = pd.read_csv(DATA_PATH, sep=None, engine='python', encoding='utf-8-sig')
 
     # Preprocess data
     TARGET_COLUMN = 'price'
-    X = df.drop(columns=[TARGET_COLUMN])
+    X = df.drop(columns=[TARGET_COLUMN, 'id'])
     y = df[TARGET_COLUMN]
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
